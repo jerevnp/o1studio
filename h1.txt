@@ -55,6 +55,14 @@ black blue
 .000.
 00000
 
+WinningStone
+black blue
+.....
+.00..
+1100.
+.000.
+00000
+
 =======
 LEGEND
 =======
@@ -66,6 +74,7 @@ p = Player
 # = Wall
 t = Temp
 s = Stone
+w = WinningStone
 
 
 =======
@@ -79,8 +88,9 @@ COLLISIONLAYERS
 (Tässä on pakko asettaa "törmäystasot" KAIKILLE objekteille)
 
 Background
-Temp
+Temp,
 Water
+WinningStone
 Player, Wall, Stone
 
 
@@ -96,6 +106,8 @@ RULES
 WINCONDITIONS
 ==============
 
+any Player on WinningStone
+
 =======
 LEVELS
 =======
@@ -105,7 +117,7 @@ MESSAGE Ratkaise labyrintti ennen kuin vesi saavuttaa sinut
 (Sijoita alla olevaan karttaan luomasi objektit)
 
 ############
-#.....#s...#
+#.....#w...#
 #.###.####.#
 #..s...#...#
 #.####.s.###
