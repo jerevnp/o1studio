@@ -1,0 +1,84 @@
+title OS1 PuzzleScript tehtävä
+author Pietari / Jere
+homepage https://github.com/jerevnp/o1studio
+
+========
+OBJECTS
+========
+
+Background
+lightgreen green
+11111
+01111
+11101
+11111
+10111
+
+Wall
+brown darkbrown
+00010
+11111
+01000
+11111
+00010
+
+Player
+black orange white blue
+.000.
+.111.
+22222
+.333.
+.3.3.
+
+=======
+LEGEND
+=======
+(Aseta tässä lyhenteet luomillesi objekteille)
+
+. = Background
+(player määrittää liikuteltavan hahmon, voit määrittää useita käyttämällä "OR" merkintää)
+p = Player
+# = Wall
+
+
+
+=======
+SOUNDS
+=======
+
+
+================
+COLLISIONLAYERS
+================
+(Tässä on pakko asettaa "törmäystasot" KAIKILLE objekteille)
+
+Background,
+Player, Wall
+
+
+
+======
+RULES
+======
+
+
+==============
+WINCONDITIONS
+==============
+
+=======
+LEVELS
+=======
+
+MESSAGE Ratkaise labyrintti ennen kuin vesi saavuttaa sinut
+
+(Sijoita alla olevaan karttaan luomasi objektit)
+
+###########
+#..p......#
+#.........#
+#.........#
+#.........#
+###########
+
+MESSAGE Voitit pelin.
