@@ -78,8 +78,9 @@ COLLISIONLAYERS
 ================
 (Tässä on pakko asettaa "törmäystasot" KAIKILLE objekteille)
 
-Background,
-Water, Temp
+Background
+Temp
+Water
 Player, Wall, Stone
 
 
@@ -89,6 +90,7 @@ RULES
 ======
 
 [ Temp Background ] -> [ Temp Water ]
+[ Temp | Background ] -> [ | Temp Background ]
 
 ==============
 WINCONDITIONS
@@ -108,7 +110,7 @@ MESSAGE Ratkaise labyrintti ennen kuin vesi saavuttaa sinut
 #..s...#...#
 #.####.s.###
 #.#..#...#p#
-#.#.######.#
+#.#.######t#
 #..........#
 ############
 
