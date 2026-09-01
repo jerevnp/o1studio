@@ -1,6 +1,7 @@
 title OS1 PuzzleScript tehtävä
 author Pietari / Jere
 homepage https://github.com/jerevnp/o1studio
+realtime_interval 1.0 (sekunnin välein)
 
 ========
 OBJECTS
@@ -30,6 +31,22 @@ black orange white blue
 .333.
 .3.3.
 
+Water
+blue darkblue
+01000
+01001
+00100
+10000
+00111
+
+Temp
+red
+.....
+.....
+..0..
+.....
+.....
+
 =======
 LEGEND
 =======
@@ -39,6 +56,7 @@ LEGEND
 (player määrittää liikuteltavan hahmon, voit määrittää useita käyttämällä "OR" merkintää)
 p = Player
 # = Wall
+t = Temp
 
 
 
@@ -53,6 +71,7 @@ COLLISIONLAYERS
 (Tässä on pakko asettaa "törmäystasot" KAIKILLE objekteille)
 
 Background,
+Water, Temp
 Player, Wall
 
 
@@ -61,6 +80,7 @@ Player, Wall
 RULES
 ======
 
+[ Temp Background ] -> [ Temp Water ]
 
 ==============
 WINCONDITIONS
@@ -78,7 +98,7 @@ MESSAGE Ratkaise labyrintti ennen kuin vesi saavuttaa sinut
 #..p......#
 #.........#
 #.........#
-#.........#
+#t........#
 ###########
 
 MESSAGE Voitit pelin.
