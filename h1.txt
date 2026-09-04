@@ -1,7 +1,7 @@
 title OS1 PuzzleScript tehtävä
 author Pietari / Jere
 homepage https://github.com/jerevnp/o1studio
-realtime_interval 1.0 (sekunnin välein)
+realtime_interval 0.5 (sekunnin välein)
 
 ========
 OBJECTS
@@ -38,6 +38,14 @@ blue darkblue
 00100
 10000
 00111
+
+Water1
+blue darkblue
+00000
+00000
+00100
+00000
+00000
 
 Temp
 red
@@ -87,20 +95,25 @@ COLLISIONLAYERS
 ================
 (Tässä on pakko asettaa "törmäystasot" KAIKILLE objekteille)
 
-Background
-Temp,
-Water
+Background,
 WinningStone
 Player, Wall, Stone
+Water, Water1
+Temp,
 
 
 
 ======
 RULES
 ======
+[stationary player] [ Temp Background ] -> [player] [ Temp Water ]
+[stationary player] [ Temp Water | Background no Wall ] -> [player] [ Water | Temp Background ]
+([ Temp Water | no Background no Wall no Water1 ] -> [ Water1 | Temp ])
+[stationary player] [ Temp no Background | ...  | Background no Wall ] -> [player] [ | ... | DOWN Background Temp ]
 
-[ Temp Background ] -> [ Temp Water ]
-[ Temp | Background ] -> [ | Temp Background ]
+(
+[stationary player] [ Temp Background ] -> [Player] [ Temp Water ]
+[stationary player] [ Temp | Background no Wall ] -> [Player] [ | Temp Background ])
 
 ==============
 WINCONDITIONS
@@ -121,9 +134,9 @@ MESSAGE Ratkaise labyrintti ennen kuin vesi saavuttaa sinut
 #.###.####.#
 #..s...#...#
 #.####.s.###
-#.#..#...#p#
-#.#.######t#
-#..........#
+#.#..#...#t#
+#.#.######.#
+#......p...#
 ############
 
 MESSAGE Voitit pelin.
