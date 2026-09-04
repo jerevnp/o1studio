@@ -39,14 +39,6 @@ blue darkblue
 10000
 00111
 
-Water1
-blue darkblue
-00000
-00000
-00100
-00000
-00000
-
 Temp
 red
 .....
